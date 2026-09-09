@@ -1,6 +1,14 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { FaGithub } from "react-icons/fa";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export type Project = {
   title: string;
   summary: string;
@@ -13,9 +21,63 @@ export type Project = {
 };
 
 export function ProjectCard({ project, reversed = false }: { project: Project; reversed?: boolean }) {
+  const cardRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const elements = [imageRef.current, contentRef.current];
+
+      gsap.set(elements, { opacity: 0, y: 60 });
+
+      gsap.to(elements, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: cardRef.current,
+        start: "bottom 10%",
+        end: "bottom top",
+        onEnter: () => {
+          gsap.to(elements, {
+            opacity: 0,
+            y: -60,
+            stagger: 0.15,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(elements, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            duration: 0.5,
+            ease: "power3.out",
+          });
+        },
+      });
+    }, cardRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <article className="relative grid items-center gap-6 lg:grid-cols-12 lg:gap-0">
+    <article ref={cardRef} className="relative grid items-center gap-6 lg:grid-cols-12 lg:gap-0">
       <div
+        ref={imageRef}
         className={`group relative overflow-hidden rounded-md border border-border lg:col-span-7 lg:row-start-1 ${
           reversed ? "lg:col-start-1" : "lg:col-start-6"
         }`}
@@ -36,6 +98,7 @@ export function ProjectCard({ project, reversed = false }: { project: Project; r
 
 
       <div
+        ref={contentRef}
         className={`relative z-10 lg:col-span-7 lg:row-start-1 ${
           reversed ? "lg:col-start-6 lg:text-right" : "lg:col-start-1"
         }`}

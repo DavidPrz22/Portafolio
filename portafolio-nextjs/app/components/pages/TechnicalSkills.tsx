@@ -1,4 +1,13 @@
-import { IconText } from "@/app/components/ui/icon-text";export interface SkillItem {
+"use client";
+
+import { useEffect, useRef } from "react";
+import { IconText } from "@/app/components/ui/icon-text";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export interface SkillItem {
   name: string;
   icon: string;
 }
@@ -9,10 +18,63 @@ export interface SkillGroup {
 }
 
 function SkillSection({ sectionTitle, skills }: SkillGroup) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      const elements = [titleRef.current, listRef.current];
+
+      gsap.set(elements, { opacity: 0, y: 60 });
+
+      gsap.to(elements, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "bottom 10%",
+        end: "bottom top",
+        onEnter: () => {
+          gsap.to(elements, {
+            opacity: 0,
+            y: -60,
+            stagger: 0.15,
+            duration: 0.5,
+            ease: "power3.in",
+          });
+        },
+        onLeaveBack: () => {
+          gsap.to(elements, {
+            opacity: 1,
+            y: 0,
+            stagger: 0.15,
+            duration: 0.5,
+            ease: "power3.out",
+          });
+        },
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="mt-12 grid sm:grid-cols-2">
-      <h3 className="text-5xl font-semibold font-heading">{sectionTitle}</h3>
-      <ul className="flex flex-wrap gap-10">
+    <div ref={sectionRef} className="mt-12 grid sm:grid-cols-2">
+      <h3 ref={titleRef} className="text-5xl font-semibold font-heading">{sectionTitle}</h3>
+      <ul ref={listRef} className="flex flex-wrap gap-10">
         {skills.map((skill, idx) => (
           <IconText
             icon={skill.icon}
