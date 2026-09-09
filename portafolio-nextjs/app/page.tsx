@@ -5,6 +5,7 @@ import { FeaturedProjects } from "@/app/components/pages/FeaturedProjects";
 import { TechnicalSkills } from "@/app/components/pages/TechnicalSkills";
 import { EducationSection } from "@/app/components/pages/EducationSection";
 import { ContactFooter } from "@/app/components/pages/ContactFooter";
+import { ParticlesSection } from "@/app/components/pages/ParticlesSection";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <SiteNav />
       <main>
         <HeroSection />
+        <ParticlesSection />
         <FeaturedProjects />
         <TechnicalSkills />
         <EducationSection />

@@ -67,7 +67,7 @@
 
 :root {
   --radius: 0.375rem;
-  --background: oklch(0.2 0.056 259.5);
+  --background: oklch(0.15 0.056 259.5);
   --foreground: oklch(0.877 0.036 268.5);
   --card: oklch(26.499% 0.06841 261.085);
   --card-foreground: oklch(0.877 0.036 268.5);
@@ -117,7 +117,7 @@
 
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
+  --background: oklch(0.1 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(26.665% 0.09285 265.3);
   --card-foreground: oklch(0.984 0.003 247.858);
@@ -158,6 +158,8 @@
 
   body {
     background-color: var(--color-background);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45' height='45' viewBox='0 0 45 45'%3E%3Cpath d='M 45 0 L 0 0 0 45' fill='none' stroke='%23ffffff' stroke-opacity='0.1' stroke-width='1'/%3E%3C/svg%3E");
+    background-repeat: repeat;
     color: var(--color-muted-foreground);
     font-family: var(--font-sans);
   }

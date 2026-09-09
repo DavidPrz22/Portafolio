@@ -51,7 +51,7 @@ const stackList: SkillGroup[] = [
   {
     sectionTitle: "DATABASE",
     skills: [
-      { name: "PostgreSQL", icon: "/technologies/SQLite.svg" },
+      { name: "PostgreSQL", icon: "/technologies/Postgres.svg" },
       { name: "SQLite", icon: "/technologies/SQLite.svg" },
       { name: "Prisma ORM", icon: "/technologies/Prisma.svg" },
       { name: "Django ORM", icon: "/technologies/Django.svg" },
