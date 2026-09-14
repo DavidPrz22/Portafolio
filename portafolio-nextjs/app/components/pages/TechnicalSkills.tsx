@@ -45,7 +45,7 @@ function SkillSection({ sectionTitle, skills }: SkillGroup) {
 
       ScrollTrigger.create({
         trigger: sectionRef.current,
-        start: "bottom 10%",
+        start: "bottom 5%",
         end: "bottom top",
         onEnter: () => {
           gsap.to(elements, {
@@ -143,7 +143,7 @@ export function TechnicalSkills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-20 md:px-8"
+      className="relative z-10 mx-auto w-full max-w-6xl scroll-mt-24 px-5 py-20 md:px-8"
     >
       <h2 id="skills-heading" className="section-label">
         <span>03.</span> Technical Skills

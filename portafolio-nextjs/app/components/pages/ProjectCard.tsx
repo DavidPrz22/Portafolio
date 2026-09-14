@@ -13,7 +13,7 @@ export type Project = {
   title: string;
   summary: string;
   stack: string[];
-  challenges: string[];
+  challenges?: string[];
   demoUrl: string;
   repoUrl: string;
   image: StaticImageData;
@@ -75,7 +75,7 @@ export function ProjectCard({ project, reversed = false }: { project: Project; r
   }, []);
 
   return (
-    <article ref={cardRef} className="relative grid items-center gap-6 lg:grid-cols-12 lg:gap-0">
+    <article ref={cardRef} className="relative z-10 grid items-center gap-6 lg:grid-cols-12 lg:gap-0">
       <div
         ref={imageRef}
         className={`group relative overflow-hidden rounded-md border border-border lg:col-span-7 lg:row-start-1 ${

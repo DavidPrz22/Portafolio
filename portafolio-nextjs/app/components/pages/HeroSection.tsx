@@ -77,7 +77,7 @@ export function HeroSection() {
       ref={sectionRef}
       id="hero"
       aria-labelledby="hero-heading"
-      className="mx-auto grid min-h-screen w-full max-w-6xl place-items-center gap-12 px-5 py-20 md:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-16"
+      className="relative z-10 mx-auto grid min-h-screen w-full max-w-6xl place-items-center gap-12 px-5 py-20 md:px-8 lg:grid-cols-[1.15fr_1fr] lg:gap-16"
     >
       <div>
 

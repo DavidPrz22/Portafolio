@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, Mail } from "lucide-react";
-import { FaGithub as Github, FaLinkedin as Linkedin, FaTwitter as Twitter } from "react-icons/fa";
+import { FaGithub as GitHub, FaLinkedin as Linkedin } from "react-icons/fa";
 import {
   Drawer,
   DrawerContent,
@@ -21,9 +21,8 @@ const sections = [
 ];
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/davidprz", icon: Github },
+  { label: "GitHub", href: "https://github.com/DavidPrz22", icon: GitHub },
   { label: "LinkedIn", href: "https://linkedin.com/in/davidprz", icon: Linkedin },
-  { label: "X / Twitter", href: "https://x.com/davidprz", icon: Twitter },
   { label: "Email", href: "mailto:david.prz.dev@gmail.com", icon: Mail },
 ];
 
