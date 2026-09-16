@@ -7,21 +7,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const facts = [
-  {
-    icon: BookOpen,
-    label: "Knowledge",
-    value: "TypeScript · Python",
-    detail: "React and Next.js on the front, Django and NestJS with PostgreSQL behind them.",
-  },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "Caracas, VE",
-    detail: "Remote-first, comfortable across UTC-5 to UTC+2 team hours.",
-  },
-];
-
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -81,32 +66,33 @@ export function HeroSection() {
     >
       <div>
 
-        <div ref={headingRef} className="mt-2 text-3xl font-heading font-bold tracking-tight text-primary sm:text-8xl lg:text-8xl">
+        <div ref={headingRef} className="mt-2 text-6xl font-heading font-bold tracking-tight text-primary sm:text-7xl md:text-8xl">
           FULL-STACK
-          <p className="text-olive-100 ml-50">DEVELOPER</p>
+          <p className="text-olive-100 ml-30 md:ml-50">DEVELOPER</p>
         </div>
 
         <p ref={textRef} className="mt-12 max-w-xl text-base leading-relaxed sm:text-lg">
           Hi, I&apos;m   
           <span className="font-semibold font-mono text-sm text-primary"> David Pérez</span>
-          . A Systems Engineering graduate who builds production-minded web software: typed React
-          front-ends, relational data models that hold up under real business rules, and APIs
-          documented well enough for someone else to pick up.
+          . A Full-Stack Developer with experience in front-end and back-end development. Specialized in TypeScript, Python, and React for developing user interfaces and RESTful APIs with
+Express, NestJS, and Django. Experience managing PostgreSQL/SQLite and NoSQL databases and applying SOLID principles. Proficient in Git for version control
+and CI/CD pipelines. I have developed web and desktop systems using Electron for business management. Focused on creating efficient,
+results-oriented solutions.
         </p>
 
-        <div ref={buttonRef} className="mt-12 flex gap-8">
-          <a
-              href="mailto:hello@dp.dev"
-                className="group inline-flex items-center gap-3 rounded-sm bg-primary px-6 py-3.5 font-mono text-[13px] font-bold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-foreground"
-          >
-                  Get in contact
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
-                </a>
-            <span className="flex items-center gap-2.5 font-mono text-sm tracking-[0.14em] text-card-background">
-                  <span className="size-2 bg-primary" />
-                  AVAILABLE FOR WORK
-            </span>
-        </div>
+    <div ref={buttonRef} className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
+  <a
+    href="mailto:perezdavid.am@gmail.com"
+    className="group inline-flex items-center gap-3 rounded-sm bg-primary px-6 py-3.5 font-mono text-[13px] font-bold uppercase tracking-widest text-primary-foreground transition-colors hover:bg-foreground"
+  >
+    Get in contact
+    <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+  </a>
+  <span className="flex items-center gap-2.5 font-mono text-sm tracking-[0.14em] text-card-background">
+    <span className="size-2 bg-primary" />
+    AVAILABLE FOR WORK
+  </span>
+</div>
       </div>
 
     </section>

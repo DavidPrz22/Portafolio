@@ -72,7 +72,7 @@ function SkillSection({ sectionTitle, skills }: SkillGroup) {
   }, []);
 
   return (
-    <div ref={sectionRef} className="mt-12 grid sm:grid-cols-2">
+    <div ref={sectionRef} className="mt-12 grid sm:grid-cols-2 gap-8">
       <h3 ref={titleRef} className="text-5xl font-semibold font-heading">{sectionTitle}</h3>
       <ul ref={listRef} className="flex flex-wrap gap-10">
         {skills.map((skill, idx) => (
@@ -117,6 +117,7 @@ const stackList: SkillGroup[] = [
       { name: "SQLite", icon: "/technologies/SQLite.svg" },
       { name: "Prisma ORM", icon: "/technologies/Prisma.svg" },
       { name: "Django ORM", icon: "/technologies/Django.svg" },
+      { name: "MongoDB", icon: "/technologies/MongoDB.svg" },
     ],
   },
   {

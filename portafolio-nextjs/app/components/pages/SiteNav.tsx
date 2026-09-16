@@ -22,8 +22,8 @@ const sections = [
 
 const socials = [
   { label: "GitHub", href: "https://github.com/DavidPrz22", icon: GitHub },
-  { label: "LinkedIn", href: "https://linkedin.com/in/davidprz", icon: Linkedin },
-  { label: "Email", href: "mailto:david.prz.dev@gmail.com", icon: Mail },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/davidperezma/", icon: Linkedin },
+  { label: "Email", href: "mailto:perezdavid.am@gmail.com", icon: Mail },
 ];
 
 export function SiteNav() {

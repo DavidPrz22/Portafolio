@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const links = [
   { label: "GitHub", href: "https://github.com/DavidPrz22", icon: GitHub },
-  { label: "LinkedIn", href: "https://linkedin.com/in/davidprz", icon: Linkedin },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/davidperezma/", icon: Linkedin },
   { label: "Email", href: "mailto:perezdavid.am@gmail.com", icon: Mail },
 ];
 

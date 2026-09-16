@@ -23,7 +23,7 @@ export function EducationSection() {
       gsap.to(elements, {
         opacity: 1,
         y: 0,
-        duration: 0.6,
+        duration: 0.4,
         stagger: 0.12,
         ease: "power3.out",
         scrollTrigger: {
@@ -42,7 +42,7 @@ export function EducationSection() {
             opacity: 0,
             y: -60,
             stagger: 0.1,
-            duration: 0.35,
+            duration: 0.4,
             ease: "power3.in",
           });
         },
@@ -51,7 +51,7 @@ export function EducationSection() {
             opacity: 1,
             y: 0,
             stagger: 0.1,
-            duration: 0.35,
+            duration: 0.4,
             ease: "power3.out",
           });
         },
