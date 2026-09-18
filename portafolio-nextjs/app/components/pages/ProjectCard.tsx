@@ -14,8 +14,8 @@ export type Project = {
   summary: string;
   stack: string[];
   challenges?: string[];
-  demoUrl: string;
-  repoUrl?: string;
+  demoUrl?: string;
+  repoUrl: string;
   image: StaticImageData;
   imageAlt: string;
 };
