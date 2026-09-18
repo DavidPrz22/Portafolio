@@ -80,7 +80,7 @@ export function EducationSection() {
           <div className="absolute inset-y-0 left-0 w-1 bg-primary/60 transition-all duration-300 group-hover:bg-primary" />
           <div className="pl-4">
             <span className="inline-block rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs tracking-[0.18em] text-primary">
-              2019 — 2025
+              2019 — 2026
             </span>
             <h3 className="mt-4 text-xl font-semibold text-heading">Systems Engineering</h3>
             <p className="mt-2 text-sm text-muted-foreground">
