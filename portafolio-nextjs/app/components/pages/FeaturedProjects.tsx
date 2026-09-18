@@ -9,8 +9,7 @@ const projects: Project[] = [
     summary:
       "A full-stack bakery management system that digitizes the complete operational lifecycle — from raw material procurement and multi-level recipe management to production tracking and point-of-sale. Cashiers process dual-currency transactions (USD/VES), and stock is deducted lot-by-lot down to component ingredients on every sale and production batch.",
     stack: ["Python", "Django Rest", "PostgreSQL", "React", "Tailwind CSS"],
-    demoUrl: "https://example.com/nexora",
-    repoUrl: "https://github.com/davidprz/nexora",
+    repoUrl: "https://github.com/DavidPrz22/PanaderiaV2-Variantes",
     image: panaderiaImage,
     imageAlt: "PanaderiaSystemV2 interface showing inventory management and production tracking",
   },
@@ -24,7 +23,6 @@ const projects: Project[] = [
       "Implemented optimistic updates with TanStack Query so the cart stays responsive on slow terminals.",
       "Packaged the web application into a desktop executable using Electron with a local write-ahead sync queue.",
     ],
-    demoUrl: "https://example.com/mintpos",
     repoUrl: "https://github.com/DavidPrz22/Logistics",
     image: logisticsImage,
     imageAlt: "LogiERP interface showing dispatch and inventory management",
@@ -34,7 +32,6 @@ const projects: Project[] = [
     summary:
       "A food consumption and caloric analysis platform that integrates with the USDA FoodData Central API to deliver precise nutritional tracking. Users search foods by category in English or Spanish, input consumption amounts, and instantly receive a full macronutrient breakdown — calories, protein, carbs, and fats. Every calculation is saved to a personal consumption history, enabling long-term dietary tracking with JWT-secured user accounts.",
     stack: ["TypeScript", "React", "Express", "PostgreSQL", "Tailwind CSS"],
-    demoUrl: "https://example.com/caloriestracker",
     repoUrl: "https://github.com/DavidPrz22/CaloriesCalculator",
     image: trackerImage,
     imageAlt: "CaloriesTracker dashboard with nutritional analysis and a food search interface",

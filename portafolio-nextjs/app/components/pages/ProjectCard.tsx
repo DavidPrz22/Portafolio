@@ -15,7 +15,7 @@ export type Project = {
   stack: string[];
   challenges?: string[];
   demoUrl: string;
-  repoUrl: string;
+  repoUrl?: string;
   image: StaticImageData;
   imageAlt: string;
 };
@@ -128,11 +128,13 @@ export function ProjectCard({ project, reversed = false }: { project: Project; r
         target="_blank"
         rel="noreferrer"
         aria-label={`${project.title} GitHub repository`}
-        className="text-heading transition-colors hover:text-primary"
+        className="text-heading flex gap-2 transition-colors hover:text-primary"
       >
-        <FaGithub />
+        GitHub Repo
+        <FaGithub  size = {25}/>
       </a>
-      <a
+      { project.demoUrl && (
+        <a
         href={project.demoUrl}
         target="_blank"
         rel="noreferrer"
@@ -141,6 +143,7 @@ export function ProjectCard({ project, reversed = false }: { project: Project; r
       >
         <ExternalLink className="h-5 w-5" />
       </a>
+      )}
     </div>
   </div>
 </article>
